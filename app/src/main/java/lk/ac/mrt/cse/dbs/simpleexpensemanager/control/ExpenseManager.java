@@ -62,6 +62,8 @@ public abstract class ExpenseManager implements Serializable {
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month, day);
         Date transactionDate = calendar.getTime();
+        //long millis=System.currentTimeMillis();
+        //java.sql.Date transactionDate=new java.sql.Date(millis);
 
         if (!amount.isEmpty()) {
             double amountVal = Double.parseDouble(amount);
@@ -76,7 +78,7 @@ public abstract class ExpenseManager implements Serializable {
      * @return
      */
     public List<Transaction> getTransactionLogs() {
-        return transactionsHolder.getPaginatedTransactionLogs(10);
+        return transactionsHolder.getPaginatedTransactionLogs(30);
     }
 
     /***
